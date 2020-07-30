@@ -17,7 +17,7 @@ public class NewTask {
             boolean durable = true;
             channel.queueDeclare(TASK_QUEUE_NAME, durable, false, false, null);
 
-            String message = String.join(" ", argv);
+            String message = "abc";// String.join(" ", argv);
 
             channel.basicPublish("", TASK_QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN,
                     message.getBytes("UTF-8"));
